@@ -2,11 +2,14 @@
 Now uses `nx` on top of `rsbuild` and `pnpm`
 
 ## Install
+Install dependencies in all workspaces recursively
 ```bash
-pnpm i
+pnpm i -r
+```
+
+Alternatively you can run install in a specific workspace only
+```bash
 pnpm i --filter provider
-pnpm i --filter lib-provider
-pnpm i --filter consumer
 ```
 
 ## Run 
