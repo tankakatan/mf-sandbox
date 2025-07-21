@@ -1,17 +1,27 @@
 # Module Federation Sandbox
-Uses `rspack` and `pnpm`
+Now uses `nx` on top of `rsbuild` and `pnpm`
 
-## Run
-To start the app:
+## Install
 ```bash
-cd provider
 pnpm i
-pnpm dev
+pnpm i --filter provider
+pnpm i --filter lib-provider
+pnpm i --filter consumer
 ```
 
-Then:
+## Run 
 ```bash
-cd cosumer
-pnpm i
-pnpm dev
+pnpm nx run-many --target=dev --projects=provider,lib-provider,consumer
+```
+
+NB: You can also install `nx` globally and run it without `pnpm`
+
+## Build
+```bash
+pnpm nx run-many --target=build --projects=provider,lib-provider,consumer
+```
+
+## Explore
+```bash
+pnpm nx graph
 ```
